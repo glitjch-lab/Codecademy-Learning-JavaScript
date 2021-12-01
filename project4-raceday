@@ -1,0 +1,73 @@
+//This is my own attempt after reading the premise, ie. without following their tutorial prompts.
+
+//Equation for race number assigned to participant.
+let raceNumber = Math.floor(Math.random() * 1000);
+
+//Participant info and categorization
+//User name
+let participantName = 'TJ';
+console.log(`Hello, ${participantName}, and welcome to the race.`);
+
+//Ask user what their age is. Re-prompted when undefined.
+let runnersAge = '81';
+runnersAge ? console.log(`Your selected age is ${runnersAge}.`) : console.log('Please select your age.');
+
+//Grouping the users at adult or youth.
+let adultRunner = '';
+let youthRunner = '';
+if (runnersAge > 18) {
+  adultRunner = true;
+  console.log('You are part of the Adult Runners group.');
+} else if (runnersAge === 18) {
+  console.log('You\'re in trouble. Go see the front desk.')
+} else if (runnersAge > 5) {
+  youthRunner = true;
+  console.log('You are part of the Youth Runners group.')
+}
+
+//Assigning the race number and run time.
+let earlyReg = ''
+if (runnerUps = earlyReg && adultRunner && runnersAge !=18) {
+  console.log(`Thank you for your early registration. Your race number is ${raceNumber + 1000}. Your run starts at 9:30 am`)
+} else if (runnerUps = adultRunner && runnersAge != 18) {
+  console.log(`Thank you for your registration. Your race number is ${raceNumber}. Your run starts at 11:00 am`)
+} else if (runnersAge != 18) {
+  console.log(`Thank you for your registration. Your race number is ${raceNumber}. Your run starts at 12:30 pm.`)
+}
+**********************************************************************************************************************************
+
+
+// This is how I was SUPPOSED to do it.
+
+let raceNumber = Math.floor(Math.random() * 1000);
+let earlyReg = undefined;
+let runnersAge = undefined;
+runnersAge ? null : console.log('Please specify your age.');
+
+//Classifying early adult registrants.
+earlyAdult = earlyReg && runnersAge > 18;
+if (earlyAdult) {
+  raceNumber += 1000;
+}
+
+//Announcing to early adult registrants.
+if (earlyAdult) {
+  console.log(`Your race starts at 9:30 am. Your race number is ${raceNumber}.`);
+} 
+//Announcing to late adult registrants. 
+else if (!earlyReg && runnersAge > 18) {
+   console.log(`Your race starts at 11:00 am. Your race number is ${raceNumber}.`);
+}
+//Announcing to youth registrants.
+else if (runnersAge < 18) {
+   console.log(`Your race starts at 12:30 pm. Your race number is ${raceNumber}.`);
+}
+//Announcing to registrants age 18.
+else if (runnersAge === 18) {
+   console.log('Please see the front desk, you troublemaker.');
+}
+else {
+  console.log('Sorry there seems to be an error. Please see the front desk.')
+}
+
+//What did I learn? Often, like English, there are some things that can be expressed better. Sort out the variables at the beginning when possible.
